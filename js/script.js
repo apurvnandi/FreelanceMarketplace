@@ -15,10 +15,9 @@ localStorage.setItem("userEmail",email);
 localStorage.setItem("userPassword",password);
 localStorage.setItem("userRole",role);
 
-alert("Registration Successful!");
+alert("Registered Successfully");
 
 window.location.href="login.html";
-
 }
 
 
@@ -34,18 +33,14 @@ let role=localStorage.getItem("userRole");
 
 if(email===storedEmail&&password===storedPassword){
 
-alert("Login Successful");
-
 if(role==="freelancer"){
 window.location.href="freelancer-dashboard.html";
 }
-
 else{
 window.location.href="client-dashboard.html";
 }
 
 }
-
 else{
 alert("Invalid Credentials");
 }
@@ -55,7 +50,5 @@ alert("Invalid Credentials");
 
 
 function logoutUser(){
-
 window.location.href="index.html";
-
 }
