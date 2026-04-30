@@ -7,14 +7,19 @@
 <body class="form-bg">
 <div class="form-box">
 <h2>Register</h2>
-<input id="regName" placeholder="Name">
-<input id="regEmail" placeholder="Email">
-<input id="regPassword" placeholder="Password">
-<select id="regRole">
+<form action="register.php" method="POST">
+<input id="regName" name="name" placeholder="Name" required>
+<input id="regEmail" name="email" type="email" placeholder="Email" required>
+<input id="regPassword" name="password" type="password" placeholder="Password" required>
+<select id="regRole" name="role" required>
 <option value="freelancer">Freelancer</option>
 <option value="client">Client</option>
 </select>
-<button onclick="registerUser()">Register</button>
+<button type="submit">Register</button>
+</form>
+<p style="margin-top: 15px; font-size: 0.9em;">
+Already have an account? <a href="login.html">Login here</a>
+</p>
 </div>
 <script src="js/script.js"></script>
 </body>

@@ -42,16 +42,19 @@ border-radius:8px;
 cursor:pointer;
 }
 
-.dashboard-container{
+.dashboard-container,
+.dashboard{
 display:flex;
+min-height:100vh;
 }
 
 .sidebar{
 width:250px;
-height:100vh;
+min-height:100vh;
 background:#111827;
 padding:20px;
 color:white;
+flex-shrink:0;
 }
 
 .sidebar a,.sidebar button{
@@ -71,12 +74,14 @@ cursor:pointer;
 background:#4f46e5;
 }
 
-.main-content{
+.main-content,
+.main{
 flex:1;
 padding:40px;
 }
 
-.card-box{
+.card-box,
+.card{
 background:white;
 padding:25px;
 margin:20px 0;
@@ -85,7 +90,8 @@ box-shadow:0 5px 10px rgba(0,0,0,0.1);
 transition:0.3s;
 }
 
-.card-box:hover{
+.card-box:hover,
+.card:hover{
 transform:translateY(-5px);
 }
 /* LANDING PAGE NAVBAR */

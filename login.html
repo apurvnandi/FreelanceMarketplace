@@ -1,16 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Login</title>
-<link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body class="form-bg">
+
 <div class="form-box">
-<h2>Login</h2>
-<input id="loginEmail" placeholder="Email">
-<input id="loginPassword" placeholder="Password">
-<button onclick="loginUser()">Login</button>
+
+    <h2>Login</h2>
+
+    <!-- Wrap inputs in a form tag pointing to login.php -->
+    <form action="login.php" method="POST">
+        
+        <input type="email" name="email" id="loginEmail" placeholder="Enter Email" required>
+
+        <input type="password" name="password" id="loginPassword" placeholder="Enter Password" required>
+
+        <button type="submit">Login</button>
+
+    </form>
+
+    <p style="margin-top: 15px; font-size: 0.9em;">
+        Don't have an account? <a href="register.html">Register here</a>
+    </p>
+
 </div>
-<script src="js/script.js"></script>
+
+<!-- You can keep the script link, but we are using the form action now -->
+<script src="./js/script.js"></script>
+
 </body>
 </html>
