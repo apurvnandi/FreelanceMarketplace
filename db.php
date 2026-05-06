@@ -108,6 +108,23 @@ try {
         ) ENGINE=InnoDB
     ");
 
+    $conn->query("
+        CREATE TABLE IF NOT EXISTS reviews (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            project_id INT NOT NULL UNIQUE,
+            client_email VARCHAR(150) NOT NULL,
+            freelancer_email VARCHAR(150) NOT NULL,
+            rating TINYINT NOT NULL DEFAULT 0,
+            comment TEXT DEFAULT NULL,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            INDEX (client_email),
+            INDEX (freelancer_email),
+            CONSTRAINT fk_reviews_project
+                FOREIGN KEY (project_id) REFERENCES projects(id)
+                ON DELETE CASCADE
+        ) ENGINE=InnoDB
+    ");
+
     $columns = [];
     $result = $conn->query("SHOW COLUMNS FROM users");
     while ($column = $result->fetch_assoc()) {

@@ -9,6 +9,14 @@ if(!isset($_SESSION['user']) || $_SESSION['role'] != "freelancer"){
 
 $user_email = $_SESSION['user']; // Using the email stored in session to match your table style
 
+$freelancer_stmt = $conn->prepare("SELECT name FROM freelancers WHERE email = ?");
+$freelancer_stmt->bind_param("s", $user_email);
+$freelancer_stmt->execute();
+$freelancer_data = $freelancer_stmt->get_result()->fetch_assoc();
+$freelancer_stmt->close();
+$freelancer_name = $freelancer_data['name'] ?? ($_SESSION['name'] ?? $user_email);
+$freelancer_initial = strtoupper(substr($freelancer_name, 0, 1));
+
 // 1. Fetch Active Projects Count (Filtering by assigned freelancer)
 $active_query = "SELECT COUNT(*) as count FROM projects WHERE freelancer_email = '$user_email' AND status = 'active'";
 $active_res = mysqli_query($conn, $active_query);
@@ -45,7 +53,7 @@ $activity_res = mysqli_query($conn, $activity_query);
 
 <body>
 
-<div class="dashboard">
+<div class="dashboard freelancer-theme">
 
 <!-- ✅ SIDEBAR (CONSISTENT WITH CLIENT) -->
 <div class="sidebar">
@@ -63,7 +71,13 @@ $activity_res = mysqli_query($conn, $activity_query);
 <!-- ✅ MAIN -->
 <div class="main">
 
-<h1>Welcome <?php echo htmlspecialchars($_SESSION['user']); ?></h1>
+<div class="dashboard-header">
+    <div>
+        <h1>Welcome, <?php echo htmlspecialchars($freelancer_name); ?></h1>
+        <p>Track your active work, completed projects, earnings, and recent activity.</p>
+    </div>
+    <div class="dashboard-avatar"><?php echo htmlspecialchars($freelancer_initial); ?></div>
+</div>
 
 <div class="cards">
 

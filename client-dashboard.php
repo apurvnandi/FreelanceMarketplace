@@ -9,6 +9,14 @@ if(!isset($_SESSION['user']) || $_SESSION['role'] != "client"){
 
 $client_email = $_SESSION['user'];
 
+$client_stmt = $conn->prepare("SELECT name FROM clients WHERE email = ?");
+$client_stmt->bind_param("s", $client_email);
+$client_stmt->execute();
+$client_data = $client_stmt->get_result()->fetch_assoc();
+$client_stmt->close();
+$client_name = $client_data['name'] ?? ($_SESSION['name'] ?? $client_email);
+$client_initial = strtoupper(substr($client_name, 0, 1));
+
 // 1. Fetch Total Projects Posted by this client
 $project_count_query = "SELECT COUNT(*) as total FROM projects WHERE client_email = '$client_email'";
 $project_count_res = mysqli_query($conn, $project_count_query);
@@ -85,7 +93,7 @@ $recent_apps_res = mysqli_query($conn, $recent_apps_query);
 
 <body>
 
-<div class="dashboard">
+<div class="dashboard client-theme">
 
 <!-- ✅ SIDEBAR FIXED -->
 <div class="sidebar">
@@ -103,7 +111,13 @@ $recent_apps_res = mysqli_query($conn, $recent_apps_query);
 <!-- ✅ MAIN CONTENT -->
 <div class="main">
 
-<h1>Welcome <?php echo htmlspecialchars($_SESSION['user']); ?></h1>
+<div class="dashboard-header">
+    <div>
+        <h1>Welcome, <?php echo htmlspecialchars($client_name); ?></h1>
+        <p>Here is your project activity, recent applications, and hiring progress.</p>
+    </div>
+    <div class="dashboard-avatar"><?php echo htmlspecialchars($client_initial); ?></div>
+</div>
 
 <!-- ✅ STATS OVERVIEW -->
 <div class="stats-container">
@@ -130,7 +144,7 @@ $recent_apps_res = mysqli_query($conn, $recent_apps_query);
                 </div>
             <?php endwhile; ?>
             <br>
-            <a href="client-manageprojects.php" style="color: #2196F3; font-size: 0.9em;">View all project applications →</a>
+            <a href="client-manageprojects.php" class="dashboard-link">View all project applications</a>
         <?php else: ?>
             <p>No applications received yet.</p>
         <?php endif; ?>

@@ -6,83 +6,225 @@
     <title>FreelanceHub</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="landing-page">
 
-    <!-- NAVBAR -->
-    <nav class="landing-nav">
-        <div class="logo">FreelanceHub</div>
+    <nav class="landing-nav landing-nav-pro">
+        <a href="index.html" class="logo brand-mark">FreelanceHub</a>
 
         <div class="nav-links">
+            <a href="#workflow">Workflow</a>
+            <a href="#features">Features</a>
             <a href="login.html">Login</a>
             <a href="register.html" class="register-btn">Register</a>
         </div>
     </nav>
 
+    <main>
+        <section class="landing-hero landing-hero-pro">
+            <div class="hero-left">
+                <p class="hero-kicker">Project marketplace for clients and freelancers</p>
+                <h1>Post projects, receive proposals, hire talent, and track payments.</h1>
+                <p>
+                    A complete PHP and MySQL freelance marketplace with client dashboards,
+                    freelancer applications, hiring decisions, and payment history.
+                </p>
 
-    <!-- HERO SECTION -->
-    <section class="landing-hero">
+                <div class="hero-buttons">
+                    <a href="register.html" class="primary-btn">Create Account</a>
+                    <a href="login.html" class="secondary-btn">Sign In</a>
+                </div>
 
-        <div class="hero-left">
-            <h1>Hire Smart. <br> Work Faster.</h1>
-
-            <p>
-                Connect freelancers and clients seamlessly.
-                Manage projects, payments, reviews, and collaboration
-                with one professional platform.
-            </p>
-
-            <div class="hero-buttons">
-                <a href="register.html" class="primary-btn">Get Started</a>
-                <a href="login.html" class="secondary-btn">Explore Platform</a>
-            </div>
-        </div>
-
-
-        <div class="hero-right">
-            <div class="hero-card">
-                <h3>🚀 500+ Freelancers</h3>
-                <p>Available for hire instantly</p>
-            </div>
-
-            <div class="hero-card">
-                <h3>💼 120+ Projects</h3>
-                <p>Managed through dashboard</p>
-            </div>
-
-            <div class="hero-card">
-                <h3>⭐ Trusted Platform</h3>
-                <p>Secure payments & reviews</p>
-            </div>
-        </div>
-
-    </section>
-
-
-    <!-- FEATURES -->
-    <section class="features-section">
-
-        <h2>Why Choose FreelanceHub?</h2>
-
-        <div class="features-grid">
-
-            <div class="feature-box">
-                <h3>Project Management</h3>
-                <p>Track all projects efficiently in one dashboard.</p>
+                <div class="hero-metrics" aria-label="Platform highlights">
+                    <div>
+                        <strong>Post</strong>
+                        <span>Clients publish projects with budget details</span>
+                    </div>
+                    <div>
+                        <strong>Apply</strong>
+                        <span>Freelancers send proposals for open work</span>
+                    </div>
+                    <div>
+                        <strong>Pay</strong>
+                        <span>Completed work is tracked in payments</span>
+                    </div>
+                </div>
             </div>
 
-            <div class="feature-box">
-                <h3>Secure Payments</h3>
-                <p>Handle freelancer/client payments transparently.</p>
+            <div class="hero-right product-preview" aria-label="FreelanceHub dashboard preview">
+                <div class="preview-topbar">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <strong>Client Dashboard</strong>
+                </div>
+                <div class="preview-body">
+                    <aside class="preview-sidebar">
+                        <span class="active-line"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </aside>
+                    <div class="preview-main">
+                        <div class="preview-stat-row">
+                            <div>
+                                <small>Total Projects</small>
+                                <strong>12</strong>
+                            </div>
+                            <div>
+                                <small>Applications</small>
+                                <strong>34</strong>
+                            </div>
+                        </div>
+                        <div class="preview-project">
+                            <span class="status-dot"></span>
+                            <div>
+                                <strong>Website Redesign</strong>
+                                <small>6 proposals received</small>
+                            </div>
+                            <button type="button">Review</button>
+                        </div>
+                        <div class="preview-project muted">
+                            <span class="status-dot"></span>
+                            <div>
+                                <strong>Mobile UI Design</strong>
+                                <small>Freelancer hired</small>
+                            </div>
+                            <button type="button">Pay</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="photo-story-section">
+            <div class="photo-story-copy">
+                <p class="section-kicker">Marketplace in action</p>
+                <h2>Bring clients and freelancers into one focused workspace.</h2>
+                <p>
+                    From project planning to proposal review and payment tracking, FreelanceHub gives
+                    both sides a simple place to move work forward.
+                </p>
             </div>
 
-            <div class="feature-box">
-                <h3>Reviews System</h3>
-                <p>Build trust with authentic feedback and ratings.</p>
+            <div class="photo-grid">
+                <article class="photo-card photo-card-large">
+                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1100&q=80" alt="Modern workspace for project planning">
+                    <div class="photo-caption">
+                        <span>Client workspace</span>
+                        <strong>Post requirements and manage project progress</strong>
+                    </div>
+                </article>
+
+                <article class="photo-card">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80" alt="Freelancer working on a laptop">
+                    <div class="photo-caption">
+                        <span>Freelancer focus</span>
+                        <strong>Apply with clear proposals</strong>
+                    </div>
+                </article>
+
+                <article class="photo-card">
+                    <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=80" alt="Team reviewing work together">
+                    <div class="photo-caption">
+                        <span>Hiring decision</span>
+                        <strong>Compare applicants and select talent</strong>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="role-selector-section">
+            <div class="role-copy">
+                <p class="section-kicker">Choose your path</p>
+                <h2 id="roleTitle">Built for clients who need reliable talent.</h2>
+                <p id="roleText">
+                    Post a project, compare freelancer proposals, hire the best match, and complete payment from one focused dashboard.
+                </p>
+                <a href="register.html" id="roleCta" class="primary-btn compact-btn">Join as Client</a>
             </div>
 
-        </div>
+            <div class="role-panel">
+                <button type="button" class="role-tab active" data-role="client">Client</button>
+                <button type="button" class="role-tab" data-role="freelancer">Freelancer</button>
+            </div>
+        </section>
 
-    </section>
+        <section id="workflow" class="workflow-section">
+            <p class="section-kicker">How it works</p>
+            <h2>A clean marketplace flow from project post to payment.</h2>
 
+            <div class="workflow-grid">
+                <div class="workflow-step">
+                    <span>01</span>
+                    <h3>Client posts a project</h3>
+                    <p>Project title, budget, and requirements are stored in MySQL and shown to freelancers.</p>
+                </div>
+                <div class="workflow-step">
+                    <span>02</span>
+                    <h3>Freelancers apply</h3>
+                    <p>Freelancers submit proposals and can track their pending or accepted applications.</p>
+                </div>
+                <div class="workflow-step">
+                    <span>03</span>
+                    <h3>Client hires and pays</h3>
+                    <p>The selected freelancer is assigned, payment is recorded, and earnings update automatically.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features-section features-section-pro">
+            <p class="section-kicker">Platform modules</p>
+            <h2>Everything needed for the project workflow.</h2>
+
+            <div class="features-grid">
+                <div class="feature-box">
+                    <h3>Client Dashboard</h3>
+                    <p>Post work, manage projects, view applications, hire freelancers, and pay active hires.</p>
+                </div>
+
+                <div class="feature-box">
+                    <h3>Freelancer Workspace</h3>
+                    <p>Browse open projects, submit proposals, see active work, and track payment history.</p>
+                </div>
+
+                <div class="feature-box">
+                    <h3>Database Driven</h3>
+                    <p>Separate users, clients, freelancers, projects, applications, and payments tables.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="landing-footer">
+        <strong>FreelanceHub</strong>
+        <span>PHP + MySQL freelance marketplace</span>
+    </footer>
+
+    <script>
+        const roleContent = {
+            client: {
+                title: "Built for clients who need reliable talent.",
+                text: "Post a project, compare freelancer proposals, hire the best match, and complete payment from one focused dashboard.",
+                cta: "Join as Client"
+            },
+            freelancer: {
+                title: "Built for freelancers who want clear project tracking.",
+                text: "Browse open work, submit proposals, see when you are selected, and track paid projects from your dashboard.",
+                cta: "Join as Freelancer"
+            }
+        };
+
+        document.querySelectorAll(".role-tab").forEach((button) => {
+            button.addEventListener("click", () => {
+                document.querySelectorAll(".role-tab").forEach((tab) => tab.classList.remove("active"));
+                button.classList.add("active");
+
+                const selected = roleContent[button.dataset.role];
+                document.getElementById("roleTitle").textContent = selected.title;
+                document.getElementById("roleText").textContent = selected.text;
+                document.getElementById("roleCta").textContent = selected.cta;
+            });
+        });
+    </script>
 </body>
 </html>
